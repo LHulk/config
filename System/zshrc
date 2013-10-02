@@ -3,7 +3,10 @@ alias update="yaourt -Suya"
 #xcape -e 'Caps_Lock=Escape'
 #
 
-
+SAVEHIST=100
+HISTFILE=~/.config/.zsh_history 
+bindkey '^R' history-incremental-search-backward
+ 
 alias i3lock="i3lock -t -i /home/lumolk/Kuvat/Waves.png"
 alias sudo="sudo "
 export EDITOR="vim"
@@ -25,7 +28,19 @@ alias mntntfs='sudo mount -t ntfs-3g /dev/sda3 /mnt/Acer/'
 autoload -U compinit promptinit
 compinit
 promptinit
- 
+
+setopt INC_APPEND_HISTORY
+setopt share_history
+setopt correct
+source .gitconf/master/System/zsh-history-substring-search.zsh
+
+#zmodload zsh/terminfo
+#bindkey "$terminfo[kcuu1]" history-substring-search-up
+#bindkey "$terminfo[kcud1]" history-substring-search-down    
+
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
+
 # This will set the default prompt to the walters theme
 prompt walters
 autoload -U colors && colors
@@ -50,8 +65,8 @@ key[Home]=${terminfo[khome]}
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
 key[Delete]=${terminfo[kdch1]}
-key[Up]=${terminfo[kcuu1]}
-key[Down]=${terminfo[kcud1]}
+#key[Up]=${terminfo[kcuu1]}
+#key[Down]=${terminfo[kcud1]}
 key[Left]=${terminfo[kcub1]}
 key[Right]=${terminfo[kcuf1]}
 key[PageUp]=${terminfo[kpp]}
