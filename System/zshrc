@@ -3,6 +3,7 @@ alias update="yaourt -Suya"
 #xcape -e 'Caps_Lock=Escape'
 #
 
+bindkey -v
 SAVEHIST=100
 HISTFILE=~/.config/.zsh_history 
 bindkey '^R' history-incremental-search-backward
