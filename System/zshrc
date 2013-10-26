@@ -29,6 +29,8 @@ alias mntntfs='sudo mount -t ntfs-3g /dev/sda3 /mnt/Acer/'
 autoload -U compinit promptinit
 compinit
 promptinit
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+        'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 setopt INC_APPEND_HISTORY
 setopt share_history
