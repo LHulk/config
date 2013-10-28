@@ -1,29 +1,32 @@
 alias update="yaourt -Suya"
-#setxkbmap -option ctrl:nocaps
-#xcape -e 'Caps_Lock=Escape'
-#
+alias pingg="ping -c 1 8.8.8.8;echo DNS:;ping -c 2 google.com"
+alias i3lock="i3lock -t -i /home/lumolk/Kuvat/Waves.png"
+alias sudo="sudo "
+alias vim="vim '+set encoding=utf-8'"
+alias svim="sudo vim '+set encoding=utf-8'"   
+alias nukkumaan="systemctl poweroff"
+alias ls='ls --color=auto'
+alias g="grep --color=auto"
+alias mntntfs='sudo mount -t ntfs-3g /dev/sda3 /mnt/Acer/'
+
+export EDITOR="vim"
+export _JAVA_AWT_WM_NONREPARENTING=1 
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
 
 bindkey -v
 SAVEHIST=100
 HISTFILE=~/.config/.zsh_history 
 bindkey '^R' history-incremental-search-backward
  
-alias i3lock="i3lock -t -i /home/lumolk/Kuvat/Waves.png"
-alias sudo="sudo "
-export EDITOR="vim"
-alias vim="vim '+set encoding=utf-8'"
-#alias pacman="pacmatic"
-alias nukkumaan="systemctl poweroff"
-#alias dropbox="python2.7 ~/bin/dropbox.py"
-alias ls='ls --color=auto'
-export _JAVA_AWT_WM_NONREPARENTING=1 
 
-alias pingg="ping -c 1 8.8.8.8;echo DNS:;ping -c 2 google.com"
-#PS1='[\u@\h \W]\$ '
 setopt autocd
-alias g="grep --color=auto"
 eval $(dircolors -b)
-alias mntntfs='sudo mount -t ntfs-3g /dev/sda3 /mnt/Acer/'
 
 #ZSH
 autoload -U compinit promptinit
@@ -44,20 +47,11 @@ source .gitconf/master/System/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# This will set the default prompt to the walters theme
-prompt walters
 autoload -U colors && colors
 PROMPT="%{$fg_bold[green]%}%(2~.%1~ .)%F{red}»%F{white} %{$reset_color%}"
 RPROMPT='%(?,%F{green}:%),%F{red}%? %F{red}:()%f'
 
 
-    export LESS_TERMCAP_mb=$'\E[01;31m'
-    export LESS_TERMCAP_md=$'\E[01;31m'
-    export LESS_TERMCAP_me=$'\E[0m'
-    export LESS_TERMCAP_se=$'\E[0m'
-    export LESS_TERMCAP_so=$'\E[01;44;33m'
-    export LESS_TERMCAP_ue=$'\E[0m'
-    export LESS_TERMCAP_us=$'\E[01;32m'
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
